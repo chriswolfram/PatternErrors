@@ -11,7 +11,7 @@ BranchFailure[branch_MatchBranchObject /; branch["MatchedQ"]] :=
 	Success["Match", <|
 		"Pattern" -> mi["Pattern"],
 		"Expression" -> HoldForm@@mi["HeldExpression"],
-		"MatchInfo" -> Iconize[mi]
+		"MatchBranch" -> Iconize[mi]
 	|>]
 
 
@@ -23,7 +23,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			branch["Pattern"]
 		},
 		"Type" -> "Atomic",
-		"MatchInfo" -> Iconize[branch]
+		"MatchBranch" -> Iconize[branch]
 	|>]
 
 
@@ -39,7 +39,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "Pattern",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
-			"MatchInfo" -> Iconize[branch]
+			"MatchBranch" -> Iconize[branch]
 		|>],
 		
 		Failure["BindingMatchFailure", <|
@@ -52,7 +52,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "Pattern",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
-			"MatchInfo" -> Iconize[branch]
+			"MatchBranch" -> Iconize[branch]
 		|>]
 		
 	]
@@ -71,7 +71,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "PatternTest",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
-			"MatchInfo" -> Iconize[branch]
+			"MatchBranch" -> Iconize[branch]
 		|>],
 		
 		Failure["PatternTestMatchFailure", <|
@@ -84,7 +84,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "PatternTest",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
-			"MatchInfo" -> Iconize[branch]
+			"MatchBranch" -> Iconize[branch]
 		|>]
 
 	]
@@ -102,7 +102,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 		},
 		"Type" -> "Alternatives",
 		"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
-		"MatchInfo" -> Iconize[branch]
+		"MatchBranch" -> Iconize[branch]
 	|>]
 
 
@@ -111,7 +111,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 	
 		With[{
 			(*TODO: This is a bit unsafe*)
-			argumentMatchInfo = SelectFirst[branch["Arguments"]["ArgumentSubmatches"], !#["MatchedQ"]&]
+			argumentBranches = SelectFirst[branch["Arguments"]["ArgumentSubmatches"], !#["MatchedQ"]&]
 		},
 			Failure["ArgumentMatchFailure", <|
 				(*TODO: Multiple arguments might fail, but this only mentions one. Maybe mention all of them?*)
@@ -119,13 +119,13 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 				"MessageParameters" -> {
 					HoldForm@@branch["HeldExpression"],
 					branch["Pattern"],
-					HoldForm@@argumentMatchInfo["HeldExpression"],
-					argumentMatchInfo["Pattern"]
+					HoldForm@@argumentBranches["HeldExpression"],
+					argumentBranches["Pattern"]
 				},
 				"Type" -> "Normal",
 				"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 				"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
-				"MatchInfo" -> Iconize[branch]
+				"MatchBranch" -> Iconize[branch]
 			|>]
 		],
 	
@@ -140,7 +140,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			"Type" -> "Normal",
 			"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 			"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
-			"MatchInfo" -> Iconize[branch]
+			"MatchBranch" -> Iconize[branch]
 		|>]
 	
 	]
