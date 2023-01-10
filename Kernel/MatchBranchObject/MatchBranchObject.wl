@@ -3,6 +3,8 @@ BeginPackage["ChristopherWolfram`PatternErrors`MatchBranchObject`"];
 Begin["`Private`"];
 
 Needs["ChristopherWolfram`PatternErrors`"]
+Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchFailure`"]
+Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchStyledPattern`"]
 
 
 (*
@@ -47,11 +49,17 @@ HoldPattern[MatchBranchObject][data:Except[branchDataPattern]] :=
 
 
 (* Accessors *)
-HoldPattern[MatchBranchObject][data:branchDataPattern][field_] :=
-	data[field]
-
 HoldPattern[MatchBranchObject][data:branchDataPattern][All] :=
 	data
+
+branch_MatchBranchObject[field_] :=
+	branch[All][field]
+
+branch_MatchBranchObject["Failure"] :=
+	BranchFailure[branch]
+
+branch_MatchBranchObject["StyledPattern"] :=
+	BranchStyledPattern[branch]
 
 
 (* branchTypeArguments["Atomic"] :=
