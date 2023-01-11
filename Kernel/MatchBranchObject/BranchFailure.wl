@@ -11,6 +11,7 @@ BranchFailure[branch_MatchBranchObject /; branch["MatchedQ"]] :=
 	Success["Match", <|
 		"Pattern" -> branch["Pattern"],
 		"Expression" -> HoldForm@@branch["HeldExpression"],
+		"Bindings" -> branch["Bindings"],
 		"MatchBranch" -> Iconize[branch]
 	|>]
 
@@ -23,6 +24,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			branch["Pattern"]
 		},
 		"Type" -> "Atomic",
+		"Bindings" -> branch["Bindings"],
 		"MatchBranch" -> Iconize[branch]
 	|>]
 
@@ -39,6 +41,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "Pattern",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
 			"MatchBranch" -> Iconize[branch]
 		|>],
 		
@@ -51,6 +54,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			},
 			"Type" -> "Pattern",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
 			"MatchBranch" -> Iconize[branch]
 		|>]
 		
@@ -69,7 +73,9 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 				branch["Arguments"]["Submatch"]["Pattern"]
 			},
 			"Type" -> "PatternTest",
+			"TestResults" -> branch["Arguments"]["TestResults"],
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
 			"MatchBranch" -> Iconize[branch]
 		|>],
 		
@@ -81,7 +87,44 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 				branch["Arguments"]["TestFunction"]
 			},
 			"Type" -> "PatternTest",
+			"TestResults" -> branch["Arguments"]["TestResults"],
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
+			"MatchBranch" -> Iconize[branch]
+		|>]
+
+	]
+
+
+(* TODO: Improve failure when the expression is a sequence *)
+BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] === "Condition"] :=
+	If[branch["BaseMatchedQ"],
+		
+		Failure["SubmatchFailure", <|
+			"MessageTemplate" -> "`1` does not match `2` because it does not match `3`.",
+			"MessageParameters" -> {
+				HoldForm@@branch["HeldExpression"],
+				branch["Pattern"],
+				branch["Arguments"]["Submatch"]["Pattern"]
+			},
+			"Type" -> "Condition",
+			"ConditionResult" -> branch["Arguments"]["ConditionResult"],
+			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
+			"MatchBranch" -> Iconize[branch]
+		|>],
+		
+		Failure["ConditionMatchFailure", <|
+			"MessageTemplate" -> "`1` does not match `2` because it does not satisfy `3`.",
+			"MessageParameters" -> {
+				HoldForm@@branch["HeldExpression"],
+				branch["Pattern"],
+				HoldForm@@branch["Arguments"]["HeldCondition"]
+			},
+			"Type" -> "Condition",
+			"ConditionResult" -> branch["Arguments"]["ConditionResult"],
+			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+			"Bindings" -> branch["Bindings"],
 			"MatchBranch" -> Iconize[branch]
 		|>]
 
@@ -99,6 +142,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 		},
 		"Type" -> "Alternatives",
 		"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
+		"Bindings" -> branch["Bindings"],
 		"MatchBranch" -> Iconize[branch]
 	|>]
 
@@ -117,6 +161,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 				"Type" -> "Normal",
 				"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 				"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
+				"Bindings" -> branch["Bindings"],
 				"MatchBranch" -> Iconize[branch]
 			|>],
 
@@ -135,6 +180,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 					"BindingConflicts" -> bindingConflicts,
 					"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 					"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
+					"Bindings" -> branch["Bindings"],
 					"MatchBranch" -> Iconize[branch]
 				|>]
 			],
@@ -156,6 +202,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 					"Type" -> "Normal",
 					"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 					"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
+					"Bindings" -> branch["Bindings"],
 					"MatchBranch" -> Iconize[branch]
 				|>]
 			]

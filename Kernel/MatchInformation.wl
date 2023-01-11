@@ -208,6 +208,7 @@ matchBranches[heldExpr_, patt:Verbatim[Pattern][name_Symbol, subpatt_]] :=
 
 
 (* PatternTest *)
+(* TODO: test should probably be contained in Hold because PatternTest is HoldRest *)
 matchBranches[heldExpr:Hold[exprs___], patt:Verbatim[PatternTest][subpatt_, test_]] :=
 	With[{
 		submatches = matchBranches[heldExpr, subpatt],
@@ -217,19 +218,53 @@ matchBranches[heldExpr:Hold[exprs___], patt:Verbatim[PatternTest][subpatt_, test
 		testsPassedQ = AllTrue[testRes,TrueQ]
 	},
 		MatchBranchObject[<|
-				"Type" -> "PatternTest",
+			"Type" -> "PatternTest",
+			"Arguments" -> <|
+				"Submatch" -> #,
+				"TestResults" -> testRes,
+				"TestFunction" -> test
+			|>,
+			"HeldExpression" -> heldExpr,
+			"Pattern" -> patt,
+			"Bindings" -> #["Bindings"],
+			"MatchedQ" -> #["MatchedQ"] && testsPassedQ,
+			"BaseMatchedQ" -> testsPassedQ
+		|>] &/@ submatches
+	]]
+
+
+(* Condition *)
+matchBranches[heldExpr:Hold[exprs___], patt:Verbatim[Condition][subpatt_, cond_]] :=
+	With[{submatches = matchBranches[heldExpr, subpatt]},
+	With[{submatchTestRes = evaluateCondition[Hold[cond], #["Bindings"]] &/@ submatches},
+		MapThread[
+			MatchBranchObject[<|
+				"Type" -> "Condition",
 				"Arguments" -> <|
-					"Submatch" -> #,
-					"TestResults" -> testRes,
-					"TestFunction" -> test
+					"Submatch" -> #1,
+					"ConditionResult" -> #2,
+					"HeldCondition" -> Hold[cond]
 				|>,
 				"HeldExpression" -> heldExpr,
 				"Pattern" -> patt,
-				"Bindings" -> #["Bindings"],
-				"MatchedQ" -> #["MatchedQ"] && testsPassedQ,
-				"BaseMatchedQ" -> testsPassedQ
-			|>] &/@ submatches
+				"Bindings" -> #1["Bindings"],
+				"MatchedQ" -> #1["MatchedQ"] && TrueQ[#2],
+				"BaseMatchedQ" -> TrueQ[#2]
+			|>]&,
+			{submatches, submatchTestRes}
+		]
 	]]
+
+
+evaluateCondition[heldCond_, bindings_] :=
+	First@ReplaceAll[
+		heldCond,
+		Replace[
+			RuleDelayed@@@Normal[bindings],
+			(sym_ :> Hold[val___]) :> (sym :> Sequence[val]),
+			{1}
+		]
+	]
 
 
 (* Alternatives *)

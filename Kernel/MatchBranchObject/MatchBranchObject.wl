@@ -26,7 +26,7 @@ Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchStyledPattern`"]
 	BaseMatchedQ: False when this branch represents the root cause of a failed match.
 *)
 
-branchTypePattern = "Atomic" | "Pattern" | "PatternTest" | "Alternatives" | "Normal";
+branchTypePattern = "Atomic" | "Pattern" | "PatternTest" | "Condition" | "Alternatives" | "Normal";
 
 branchDataPattern = KeyValuePattern[{
 	"Type" -> type:branchTypePattern,
@@ -78,8 +78,15 @@ branch_MatchBranchObject["StyledPattern"] :=
 	"PatternTest"
 	<|
 		"Submatch" -> _MatchBranchObject,
-		"TestResults" -> {___?BooleanQ},
+		"TestResults" -> {___},
 		"TestFunction" -> _
+	|>
+
+	"Condition"
+	<|
+		"Submatch" -> _MatchBranchObject,
+		"ConditionResult" -> _,
+		"HeldCondition" -> _
 	|>
 
 	"Alternatives"

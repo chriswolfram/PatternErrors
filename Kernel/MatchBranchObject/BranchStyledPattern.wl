@@ -35,6 +35,14 @@ BranchStyledPattern[Verbatim[PatternTest][subpatt_,test_], branch_MatchBranchObj
 	}]
 
 
+BranchStyledPattern[Verbatim[Condition][subpatt_,cond_], branch_MatchBranchObject /; branch["Type"] === "Condition"] :=
+	Row[{
+		BranchStyledPattern[branch["Arguments"]["Submatch"]],
+		Style[" /; ", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]],
+		Style[cond, If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
+	}]
+
+
 BranchStyledPattern[Verbatim[Alternatives][subpatts___], branch_MatchBranchObject /; branch["Type"] === "Alternatives"] :=
 	Row[Riffle[
 		ReplacePart[
