@@ -194,7 +194,8 @@ matchBranches[heldExpr_, patt:Verbatim[Pattern][name_Symbol, subpatt_]] :=
 				"Type" -> "Pattern",
 				"Arguments" -> <|
 					"Submatch" -> #,
-					"BindingMatchedQ" -> bindingMatchedQ
+					"BindingMatchedQ" -> bindingMatchedQ,
+					"PatternVariable" -> name
 				|>,
 				"HeldExpression" -> heldExpr,
 				"Pattern" -> patt,
@@ -219,7 +220,8 @@ matchBranches[heldExpr:Hold[exprs___], patt:Verbatim[PatternTest][subpatt_, test
 				"Type" -> "PatternTest",
 				"Arguments" -> <|
 					"Submatch" -> #,
-					"Tests" -> testRes
+					"TestResults" -> testRes,
+					"TestFunction" -> test
 				|>,
 				"HeldExpression" -> heldExpr,
 				"Pattern" -> patt,
@@ -237,7 +239,7 @@ matchBranches[heldExpr_, patt:Verbatim[Alternatives][patts___]] :=
 			"Type" -> "Alternatives",
 			"Arguments" -> <|
 				"Submatch" -> #1,
-				"Branch" -> First[#2]
+				"BranchIndex" -> First[#2]
 			|>,
 			"HeldExpression" -> heldExpr,
 			"Pattern" -> patt,

@@ -62,6 +62,41 @@ branch_MatchBranchObject["StyledPattern"] :=
 	BranchStyledPattern[branch]
 
 
+(*
+	Type specific arguments:
+
+	"Atomic"
+	<||>
+
+	"Pattern"
+	<|
+		"Submatch" -> _MatchBranchObject,
+		"BindingMatchedQ" -> _?BooleanQ,
+		"PatternVariable" -> _Symbol
+	|>
+
+	"PatternTest"
+	<|
+		"Submatch" -> _MatchBranchObject,
+		"TestResults" -> {___?BooleanQ},
+		"TestFunction" -> _
+	|>
+
+	"Alternatives"
+	<|
+		"Submatch" -> _MatchBranchObject,
+		"BranchIndex" -> _Integer
+	|>
+
+	"Normal"
+	<|
+		"HeadSubmatch" -> _MatchBranchObject,
+		"ArgumentSubmatches" -> {___MatchBranchObject},
+		"BindingConflicts" -> <|_Symbol -> {Repeated[_Hold, {2,Infinity}]}|>
+	|>
+*)
+
+
 (* branchTypeArguments["Atomic"] :=
 	KeyValuePattern[{}]?AssociationQ
 

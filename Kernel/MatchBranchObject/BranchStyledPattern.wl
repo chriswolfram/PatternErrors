@@ -45,16 +45,16 @@ BranchStyledPattern[Verbatim[Alternatives][subpatts___], branch_MatchBranchObjec
 	]]
 
 
-(* TODO: Doesn't display red if there are binding conflicts *)
+(* TODO: Doesn't display well if there are binding conflicts *)
 BranchStyledPattern[patt_, branch_MatchBranchObject /; branch["Type"] === "Normal"] :=
 	Row[{
 		BranchStyledPattern[branch["Arguments"]["HeadSubmatch"]],
-		Style["[", matchedColor],
+		Style["[", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]],
 		Splice@Riffle[
 			BranchStyledPattern/@branch["Arguments"]["ArgumentSubmatches"],
-			Style[", ", matchedColor]
+			Style[", ", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
 		],
-		Style["]", matchedColor]
+		Style["]", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
 	}]
 
 

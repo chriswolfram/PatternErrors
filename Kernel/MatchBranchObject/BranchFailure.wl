@@ -47,8 +47,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			"MessageParameters" -> {
 				HoldForm@@branch["HeldExpression"],
 				branch["Pattern"],
-				(*TODO: This is a bit unsafe*)
-				HoldForm@@Lookup[branch["Bindings"], Replace[branch["Pattern"],Verbatim[Pattern][sym_,_]:>sym]]
+				HoldForm@@Lookup[branch["Bindings"], branch["Arguments"]["PatternVariable"]]
 			},
 			"Type" -> "Pattern",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
@@ -79,8 +78,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 			"MessageParameters" -> {
 				HoldForm@@branch["HeldExpression"],
 				branch["Pattern"],
-				(*TODO: This is a bit unsafe*)
-				Replace[branch["Pattern"],Verbatim[PatternTest][_,test_]:>test]
+				branch["Arguments"]["TestFunction"]
 			},
 			"Type" -> "PatternTest",
 			"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
@@ -95,10 +93,9 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 		"MessageTemplate" -> "`1` does not match the `2` branch of `3` because it does not match `4`.",
 		"MessageParameters" -> {
 			HoldForm@@branch["HeldExpression"],
-			IntegerName[branch["Arguments"]["Branch"], "Ordinal"],
+			IntegerName[branch["Arguments"]["BranchIndex"], "Ordinal"],
 			branch["Pattern"],
-			(*TODO: This is a bit unsafe*)
-			branch["Pattern"][[branch["Arguments"]["Branch"]]]
+			branch["Arguments"]["Submatch"]["Pattern"]
 		},
 		"Type" -> "Alternatives",
 		"Submatch" -> BranchFailure[branch["Arguments"]["Submatch"]],
@@ -115,8 +112,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 				"MessageParameters" -> {
 					HoldForm@@branch["HeldExpression"],
 					branch["Pattern"],
-					(*TODO: This is a bit unsafe*)
-					Head[branch["Pattern"]]
+					branch["HeadSubmatch"]["Pattern"]
 				},
 				"Type" -> "Normal",
 				"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
