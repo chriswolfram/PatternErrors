@@ -33,7 +33,7 @@ branchDataPattern = KeyValuePattern[{
 	"Arguments" -> args_?AssociationQ,
 	"HeldExpression" -> heldExpr_,
 	"Pattern" -> patt_,
-	"Bindings" -> bindings:{___Rule},
+	"Bindings" -> bindings_?AssociationQ,
 	"MatchedQ" -> matchedQ_?BooleanQ,
 	"BaseMatchedQ" -> baseMatchedQ_?BooleanQ
 }]?AssociationQ;

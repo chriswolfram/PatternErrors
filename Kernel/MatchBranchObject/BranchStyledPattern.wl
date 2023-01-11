@@ -45,6 +45,7 @@ BranchStyledPattern[Verbatim[Alternatives][subpatts___], branch_MatchBranchObjec
 	]]
 
 
+(* TODO: Doesn't display red if there are binding conflicts *)
 BranchStyledPattern[patt_, branch_MatchBranchObject /; branch["Type"] === "Normal"] :=
 	Row[{
 		BranchStyledPattern[branch["Arguments"]["HeadSubmatch"]],
