@@ -132,7 +132,7 @@ BranchFailure[branch_MatchBranchObject /; !branch["MatchedQ"] && branch["Type"] 
 						First[Values[bindingConflicts]]
 					},
 					"Type" -> "Normal",
-					"BindingConflicts" -> bindingConflicts
+					"BindingConflicts" -> bindingConflicts,
 					"HeadSubmatch" -> BranchFailure[branch["Arguments"]["HeadSubmatch"]],
 					"ArgumentSubmatches" -> BranchFailure/@branch["Arguments"]["ArgumentSubmatches"],
 					"MatchBranch" -> Iconize[branch]
