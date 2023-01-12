@@ -7,8 +7,11 @@ Begin["`Private`"];
 Needs["ChristopherWolfram`PatternErrors`"]
 
 
-matchedColor = RGBColor[0.2,0.5,1];
-unmatchedColor = RGBColor[1,0.2,0.15];
+(* matchedColor = RGBColor[0.2,0.5,1];
+unmatchedColor = RGBColor[1,0.2,0.15]; *)
+
+matchedColor = RGBColor[{92, 152, 97}/255];
+unmatchedColor = RGBColor[{129, 43, 38}/255];
 
 
 BranchStyledPattern[branch_MatchBranchObject] :=
@@ -31,7 +34,7 @@ BranchStyledPattern[Verbatim[PatternTest][subpatt_,test_], branch_MatchBranchObj
 	Row[{
 		BranchStyledPattern[branch["Arguments"]["Submatch"]],
 		Style["?", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]],
-		Style[test, If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
+		Style[HoldForm[test], If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
 	}]
 
 
@@ -39,7 +42,7 @@ BranchStyledPattern[Verbatim[Condition][subpatt_,cond_], branch_MatchBranchObjec
 	Row[{
 		BranchStyledPattern[branch["Arguments"]["Submatch"]],
 		Style[" /; ", If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]],
-		Style[cond, If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
+		Style[HoldForm[cond], If[branch["BaseMatchedQ"],matchedColor,unmatchedColor]]
 	}]
 
 

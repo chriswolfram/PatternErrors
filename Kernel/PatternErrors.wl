@@ -1,5 +1,6 @@
 BeginPackage["ChristopherWolfram`PatternErrors`"];
 
+HeldMatchInformation
 MatchInformationObject
 MatchBranchObject
 

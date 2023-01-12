@@ -26,41 +26,6 @@ Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchStyledPattern`"]
 	BaseMatchedQ: False when this branch represents the root cause of a failed match.
 *)
 
-branchTypePattern = "Atomic" | "Pattern" | "PatternTest" | "Condition" | "Alternatives" | "Normal";
-
-branchDataPattern = KeyValuePattern[{
-	"Type" -> type:branchTypePattern,
-	"Arguments" -> args_?AssociationQ,
-	"HeldExpression" -> heldExpr_,
-	"Pattern" -> patt_,
-	"Bindings" -> bindings_?AssociationQ,
-	"MatchedQ" -> matchedQ_?BooleanQ,
-	"BaseMatchedQ" -> baseMatchedQ_?BooleanQ
-}]?AssociationQ;
-
-
-(* Verifier *)
-HoldPattern[MatchBranchObject][data:Except[branchDataPattern]] :=
-	Failure["InvalidMatchBranchObject", <|
-		"MessageTemplate" :> MatchBranchObject::invMatchBranchObject,
-		"MessageParameters" -> {data},
-		"Data" -> data 
-	|>]
-
-
-(* Accessors *)
-HoldPattern[MatchBranchObject][data:branchDataPattern][All] :=
-	data
-
-branch_MatchBranchObject[field_] :=
-	branch[All][field]
-
-branch_MatchBranchObject["Failure"] :=
-	BranchFailure[branch]
-
-branch_MatchBranchObject["StyledPattern"] :=
-	BranchStyledPattern[branch]
-
 
 (*
 	Type specific arguments:
@@ -102,6 +67,47 @@ branch_MatchBranchObject["StyledPattern"] :=
 		"BindingConflicts" -> <|_Symbol -> {Repeated[_Hold, {2,Infinity}]}|>
 	|>
 *)
+
+branchTypePattern = "Atomic" | "Pattern" | "PatternTest" | "Condition" | "Alternatives" | "Normal";
+
+branchDataPattern = KeyValuePattern[{
+	"Type" -> type:branchTypePattern,
+	"Arguments" -> args_?AssociationQ,
+	"HeldExpression" -> heldExpr_,
+	"Pattern" -> patt_,
+	"Bindings" -> bindings_?AssociationQ,
+	"MatchedQ" -> matchedQ_?BooleanQ,
+	"BaseMatchedQ" -> baseMatchedQ_?BooleanQ
+}]?AssociationQ;
+
+
+(* Verifier *)
+HoldPattern[MatchBranchObject][data:Except[branchDataPattern]] :=
+	Failure["InvalidMatchBranchObject", <|
+		"MessageTemplate" :> MatchBranchObject::invMatchBranchObject,
+		"MessageParameters" -> {data},
+		"Data" -> data 
+	|>]
+
+
+(* Accessors *)
+HoldPattern[MatchBranchObject][data:branchDataPattern][All] :=
+	data
+
+branch_MatchBranchObject[field_] :=
+	branch[All][field]
+
+branch_MatchBranchObject["Failure"] :=
+	BranchFailure[branch]
+
+branch_MatchBranchObject["StyledPattern"] :=
+	BranchStyledPattern[branch]
+
+
+(* Formatting *)
+(* MatchBranchObject /: Format[branch_MatchBranchObject] := *)
+
+
 
 
 (* branchTypeArguments["Atomic"] :=
