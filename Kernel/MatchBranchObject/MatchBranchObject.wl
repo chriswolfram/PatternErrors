@@ -82,6 +82,7 @@ branchDataPattern = KeyValuePattern[{
 
 
 (* Verifier *)
+
 HoldPattern[MatchBranchObject][data:Except[branchDataPattern]] :=
 	Failure["InvalidMatchBranchObject", <|
 		"MessageTemplate" :> MatchBranchObject::invMatchBranchObject,
@@ -91,6 +92,7 @@ HoldPattern[MatchBranchObject][data:Except[branchDataPattern]] :=
 
 
 (* Accessors *)
+
 HoldPattern[MatchBranchObject][data:branchDataPattern][All] :=
 	data
 
@@ -103,39 +105,99 @@ branch_MatchBranchObject["Failure"] :=
 branch_MatchBranchObject["StyledPattern"] :=
 	BranchStyledPattern[branch]
 
+(* TODO: This is a slightly unsafe way to do this: *)
+branch_MatchBranchObject["MatchRatio"] :=
+	Count[branch, b_MatchBranchObject /; b["BaseMatchedQ"], {0,Infinity}] /
+	Count[branch, b_MatchBranchObject, {0,Infinity}]
+
 
 (* Formatting *)
-(* MatchBranchObject /: Format[branch_MatchBranchObject] := *)
+
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "Atomic"] :=
+	Interpretation[
+		Panel@branchOpenerHeader[branch],
+		branch
+	]
 
 
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "Pattern"] :=
+	Interpretation[
+		Panel@OpenerView[{
+			branchOpenerHeader[branch],
+			Row[{"Submatch: ", branch["Arguments"]["Submatch"]}]
+		}],
+		branch
+	]
 
 
-(* branchTypeArguments["Atomic"] :=
-	KeyValuePattern[{}]?AssociationQ
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "PatternTest"] :=
+	Interpretation[
+		Panel[OpenerView[{
+			branchOpenerHeader[branch],
+			Column[{
+				Row[{"Test results: ", branch["Arguments"]["TestResults"]}],
+				Row[{"Submatch: ", branch["Arguments"]["Submatch"]}]
+			}]
+		}]],
+		branch
+	]
 
-branchTypeArguments["Pattern"] :=
-	KeyValuePattern[{
-		"Submatch" -> _MatchBranchObject,
-		"BindingMatchedQ" -> _?BooleanQ
-	}]?AssociationQ
 
-branchTypeArguments["PatternTest"] :=
-	KeyValuePattern[{
-		"Submatch" -> _MatchBranchObject,
-		"Tests" -> {___?BooleanQ}
-	}]?AssociationQ
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "Condition"] :=
+	Interpretation[
+		Panel[OpenerView[{
+			branchOpenerHeader[branch],
+			Column[{
+				Row[{"Condition result: ", branch["Arguments"]["ConditionResult"]}],
+				Row[{"Bindings: ", branch["Bindings"]}],
+				Row[{"Submatch: ", branch["Arguments"]["Submatch"]}]
+			}]
+		}]],
+		branch
+	]
 
-branchTypeArguments["Alternatives"] :=
-	KeyValuePattern[{
-		"Submatch" -> _MatchBranchObject,
-		"Branch" -> _Integer
-	}]?AssociationQ
 
-branchTypeArguments["Normal"] :=
-	KeyValuePattern[{
-		"HeadSubmatch" -> _MatchBranchObject,
-		"ArgumentSubmatches" -> {___MatchBranchObject}
-	}]?AssociationQ *)
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "Alternatives"] :=
+	Interpretation[
+		Panel[OpenerView[{
+			branchOpenerHeader[branch],
+			Column[{
+				Row[{"Branch index: ", branch["Arguments"]["BranchIndex"]}],
+				Row[{"Submatch: ", branch["Arguments"]["Submatch"]}]
+			}]
+		}]],
+		branch
+	]
+
+
+MatchBranchObject /: Format[branch_MatchBranchObject /; branch["Type"] === "Normal"] :=
+	Interpretation[
+		Panel[OpenerView[{
+			branchOpenerHeader[branch],
+			Column[{
+				Row[{"Binding conflicts: ", branch["Arguments"]["BindingConflicts"]}],
+				Row[{"Head submatch: ", branch["Arguments"]["HeadSubmatch"]}],
+				OpenerView[{
+					"Argument submatches",
+					Column[branch["Arguments"]["ArgumentSubmatches"]]
+				}]
+			}]
+		}]],
+		branch
+	]
+
+
+branchOpenerHeader[branch_] :=
+	With[{fail = branch["Failure"]},
+		If[FailureQ[fail],
+			Column[{
+				branch["Failure"]["Message"],
+				branch["StyledPattern"]
+			}],
+			branch["StyledPattern"]
+		]
+	]
+
 
 
 End[];

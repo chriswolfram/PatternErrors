@@ -293,7 +293,7 @@ HeldMatchInformation[heldExpr:Hold[head_[args___]], patt:headPatt_[argPatts___]]
 	With[{argGroups = argumentGroupings[Hold[args], {argPatts}]},
 	With[{exprGroups = Prepend[Hold[head]]/@argGroups},
 	With[{patts = {headPatt, argPatts}},
-	With[{headArgumentMatches = Catenate@Tuples[Transpose[MapThread[HeldMatchInformation, {#, patts}]]]&/@exprGroups},
+	With[{headArgumentMatches = Catenate[Tuples[MapThread[HeldMatchInformation, {#, patts}]]&/@exprGroups]},
 		(matchList |->
 			With[{bindingLists = Merge[#["Bindings"]&/@matchList, DeleteDuplicates]},
 			With[{bindingConflicts = Select[bindingLists, Length[#]>1&]},
@@ -331,6 +331,8 @@ HeldMatchInformation[heldExpr:Hold[expr_], patt:headPatt_[argPatts___]] :=
 	argumentGroupings[heldExpr, argPattsList]
 		returns a all possible groupings of arguments that are plausible given the given
 		argument patterns.
+
+	Returns in the form {{Hold[a],Hold[b,c]}, {Hold[a,b],Hold[c]}, ...}
 *)
 argumentGroupings[heldExpr_, argPattsList_] :=
 	With[{

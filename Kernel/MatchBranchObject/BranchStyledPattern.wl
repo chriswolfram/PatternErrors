@@ -50,7 +50,7 @@ BranchStyledPattern[Verbatim[Alternatives][subpatts___], branch_MatchBranchObjec
 	Row[Riffle[
 		ReplacePart[
 			{subpatts},
-			branch["Arguments"]["Branch"] -> BranchStyledPattern[branch["Arguments"]["Submatch"]]
+			branch["Arguments"]["BranchIndex"] -> BranchStyledPattern[branch["Arguments"]["Submatch"]]
 		],
 		"|"
 	]]

@@ -11,6 +11,7 @@ Needs["ChristopherWolfram`PatternErrors`"]
 *)
 
 (* Verifier *)
+
 HoldPattern[MatchInformationObject][branches:Except[{___MatchBranchObject}]] :=
 	Failure["InvalidMatchInformationObject", <|
 		"MessageTemplate" :> MatchInformationObject::invMatchInformationObject,
@@ -20,8 +21,23 @@ HoldPattern[MatchInformationObject][branches:Except[{___MatchBranchObject}]] :=
 
 
 (* Accessors *)
+
 HoldPattern[MatchInformationObject][branches:{___MatchBranchObject}]["Branches"] :=
 	branches
+
+
+(* Formatting *)
+
+MatchInformationObject /: Format[matchInfo_MatchInformationObject] :=
+	Interpretation[
+		Row[{
+			"MatchInformationObject[",
+			MenuView[#["StyledPattern"] -> # &/@ ReverseSortBy[matchInfo["Branches"], #["MatchRatio"]&]],
+			"]"
+		}],
+		matchInfo
+	]
+
 
 
 End[];
