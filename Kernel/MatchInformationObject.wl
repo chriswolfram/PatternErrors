@@ -25,6 +25,9 @@ HoldPattern[MatchInformationObject][branches:Except[{___MatchBranchObject}]] :=
 HoldPattern[MatchInformationObject][branches:{___MatchBranchObject}]["Branches"] :=
 	branches
 
+matchInfo_MatchInformationObject["BestMatchBranch"] :=
+	First@MaximalBy[matchInfo["Branches"], #["MatchRatio"]&]
+
 
 (* Formatting *)
 
