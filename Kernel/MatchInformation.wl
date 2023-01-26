@@ -8,23 +8,29 @@ Needs["ChristopherWolfram`PatternErrors`"]
 (* Top-level functions *)
 
 MatchInformation[expr_, patt_] :=
-	MatchInformationObject[HeldMatchInformation[Hold[expr], Hold[patt]]]
+	HeldMatchInformation[Hold[expr], Hold[patt]]
+
+
+(* TODO: add fallthrough *)
+HeldMatchInformation[heldExpr_Hold, heldPatt_Hold] :=
+	MatchInformationObject[matchBranches[heldExpr, heldPatt]]
+
 
 
 (****************************************************************)
-(********************* HeldMatchInformation *********************)
+(************************* matchBranches ************************)
 (****************************************************************)
 
 (*
-	HeldMatchInformation[heldExpr, patt]
+	matchBranches[heldExpr, patt]
 		returns a list of MatchBranchObjects given a held expression and a pattern.
 *)
 
-(* TODO: Add fallthrough case for HeldMatchInformation *)
+(* TODO: Add fallthrough case for matchBranches *)
 
 (* Atomic *)
 (* TODO: This should eventually be removed because it ignores bindings (among other things) *)
-HeldMatchInformation[heldExpr_Hold, heldPatt_Hold] :=
+matchBranches[heldExpr_Hold, heldPatt_Hold] :=
 	If[MatchQ[heldExpr, heldPatt],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -49,7 +55,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt_Hold] :=
 
 (* Blank *)
 (* TODO: Make these check the heads manually so that more specific MatchBranchObjects could be given. *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][]]] :=
 	If[MatchQ[heldExpr, Hold[_]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -71,7 +77,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][]]] :=
 		|>]}
 	]
 
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][head_Symbol]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][head_Symbol]]] :=
 	If[MatchQ[heldExpr, Hold[_head]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -96,7 +102,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Blank][head_Symbol]]]
 
 (* BlankSequence *)
 (* TODO: Make these check the heads manually so that more specific MatchBranchObjects could be given. *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][]]] :=
 	If[MatchQ[heldExpr, Hold[__]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -118,7 +124,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][]]] :=
 		|>]}
 	]
 
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][head_Symbol]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][head_Symbol]]] :=
 	If[MatchQ[heldExpr, Hold[__head]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -142,7 +148,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankSequence][head_S
 
 
 (* BlankNullSequence *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][]]] :=
 	If[MatchQ[heldExpr, Hold[___]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -164,7 +170,7 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][]]
 		|>]}
 	]
 
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][head_Symbol]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][head_Symbol]]] :=
 	If[MatchQ[heldExpr, Hold[___head]],
 		{MatchBranchObject[<|
 			"Type" -> "Atomic",
@@ -188,13 +194,13 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[BlankNullSequence][he
 
 
 (* HoldPattern *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[HoldPattern][subpatt_]]] :=
-	HeldMatchInformation[heldExpr, Hold[subpatt]]
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[HoldPattern][subpatt_]]] :=
+	matchBranches[heldExpr, Hold[subpatt]]
 
 
 (* Pattern *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Pattern][name_Symbol, subpatt_]]] :=
-	With[{submatches = HeldMatchInformation[heldExpr, Hold[subpatt]]},
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[Pattern][name_Symbol, subpatt_]]] :=
+	With[{submatches = matchBranches[heldExpr, Hold[subpatt]]},
 		With[{bindingMatchedQ = !KeyExistsQ[#["Bindings"],name] || heldExpr === Lookup[#["Bindings"],name]},
 			MatchBranchObject[<|
 				"Type" -> "Pattern",
@@ -215,9 +221,9 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Pattern][name_Symbol,
 
 (* PatternTest *)
 (* TODO: test should probably be contained in Hold because PatternTest is HoldRest *)
-HeldMatchInformation[heldExpr:Hold[exprs___], heldPatt:Hold[Verbatim[PatternTest][subpatt_, test_]]] :=
+matchBranches[heldExpr:Hold[exprs___], heldPatt:Hold[Verbatim[PatternTest][subpatt_, test_]]] :=
 	With[{
-		submatches = HeldMatchInformation[heldExpr, Hold[subpatt]],
+		submatches = matchBranches[heldExpr, Hold[subpatt]],
 		testRes = test/@{exprs}
 	},
 	With[{
@@ -240,8 +246,8 @@ HeldMatchInformation[heldExpr:Hold[exprs___], heldPatt:Hold[Verbatim[PatternTest
 
 
 (* Condition *)
-HeldMatchInformation[heldExpr:Hold[exprs___], heldPatt:Hold[Verbatim[Condition][subpatt_, cond_]]] :=
-	With[{submatches = HeldMatchInformation[heldExpr, Hold[subpatt]]},
+matchBranches[heldExpr:Hold[exprs___], heldPatt:Hold[Verbatim[Condition][subpatt_, cond_]]] :=
+	With[{submatches = matchBranches[heldExpr, Hold[subpatt]]},
 	With[{submatchTestRes = evaluateCondition[Hold[cond], #["Bindings"]] &/@ submatches},
 		MapThread[
 			MatchBranchObject[<|
@@ -274,7 +280,7 @@ evaluateCondition[heldCond_, bindings_] :=
 
 
 (* Alternatives *)
-HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Alternatives][patts___]]] :=
+matchBranches[heldExpr_Hold, heldPatt:Hold[Verbatim[Alternatives][patts___]]] :=
 	Catenate@MapIndexed[
 		MatchBranchObject[<|
 			"Type" -> "Alternatives",
@@ -289,18 +295,18 @@ HeldMatchInformation[heldExpr_Hold, heldPatt:Hold[Verbatim[Alternatives][patts__
 			"MatchedQ" -> #1["MatchedQ"],
 			"BaseMatchedQ" -> True
 		|>]&,
-		HeldMatchInformation[heldExpr,#]&/@(List@@(Hold/@Hold[patts])),
+		matchBranches[heldExpr,#]&/@(List@@(Hold/@Hold[patts])),
 		{2}
 	]
 
 
 (* Normal *)
 (* TODO: What about attributes? *)
-HeldMatchInformation[heldExpr:Hold[head_[args___]], heldPatt:Hold[headPatt_[argPatts___]]] :=
+matchBranches[heldExpr:Hold[head_[args___]], heldPatt:Hold[headPatt_[argPatts___]]] :=
 	With[{argGroups = argumentGroupings[Hold[args], {argPatts}]},
 	With[{exprGroups = Prepend[Hold[head]]/@argGroups},
 	With[{patts = List@@(Hold/@Hold[headPatt, argPatts])},
-	With[{headArgumentMatches = Catenate[Tuples[MapThread[HeldMatchInformation, {#, patts}]]&/@exprGroups]},
+	With[{headArgumentMatches = Catenate[Tuples[MapThread[matchBranches, {#, patts}]]&/@exprGroups]},
 		(matchList |->
 			With[{bindingLists = Merge[#["Bindings"]&/@matchList, DeleteDuplicates]},
 			With[{bindingConflicts = Select[bindingLists, Length[#]>1&]},
@@ -322,7 +328,7 @@ HeldMatchInformation[heldExpr:Hold[head_[args___]], heldPatt:Hold[headPatt_[argP
 	]]]]
 
 
-HeldMatchInformation[heldExpr:Hold[expr_], heldPatt:Hold[headPatt_[argPatts___]]] :=
+matchBranches[heldExpr:Hold[expr_], heldPatt:Hold[headPatt_[argPatts___]]] :=
 	{MatchBranchObject[<|
 		"Type" -> "Atomic",
 		"Arguments" -> <||>,

@@ -1,0 +1,1732 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     90382,       1722]
+NotebookOptionsPosition[     89485,       1696]
+NotebookOutlinePosition[     89894,       1712]
+CellTagsIndexPosition[     89851,       1709]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MatchInformation", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", 
+      RowBox[{"g", "[", 
+       RowBox[{"6", ",", "3"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", 
+      RowBox[{"f", "[", 
+       RowBox[{"___", ",", "3"}], "]"}]}], "}"}]}], "]"}], "[", 
+  "\"\<Failure\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.883735067456813*^9, 3.883735088364601*^9}},
+ CellLabel->"In[26]:=",
+ CellID->1151791968,ExpressionUUID->"b1d8aff3-11fb-45c0-8a52-7affa9826f42"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Failure",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = True, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {10.77890625, {0., 10.77890625}}], 
+              Appearance -> None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox[
+             "\"\[WarningSign]\"", "Message", StripOnInput -> False, FontSize -> 
+              35], ContentPadding -> False, FrameMargins -> {{0, 0}, {0, 0}}, 
+             FrameStyle -> None, StripOnInput -> False], 
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"Expected an expression matching \
+\\!\\(\\*TagBox[RowBox[{\\\"f\\\", \\\"[\\\", RowBox[{\\\"___\\\", \\\",\\\", \
+\\\"3\\\"}], \\\"]\\\"}], Function[Short[Slot[1], 5]]]\\) in the \
+\\!\\(\\*TagBox[\\\"\\\\\\\"third\\\\\\\"\\\", Function[Short[Slot[1], \
+5]]]\\) argument of \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \
+\\\",\\\", \\\"2\\\", \\\",\\\", RowBox[{\\\"f\\\", \\\"[\\\", \
+RowBox[{\\\"___\\\", \\\",\\\", \\\"3\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+Function[Short[Slot[1], 5]]]\\), but found \\!\\(\\*TagBox[RowBox[{\\\"g\\\", \
+\\\"[\\\", RowBox[{\\\"6\\\", \\\",\\\", \\\"3\\\"}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) instead.\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"ArgumentMatchFailure\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}}, 
+             AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
+               ImageSizeCache -> {10.77890625, {0., 10.77890625}}], 
+              Appearance -> None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox[
+             "\"\[WarningSign]\"", "Message", StripOnInput -> False, FontSize -> 
+              35], ContentPadding -> False, FrameMargins -> {{0, 0}, {0, 0}}, 
+             FrameStyle -> None, StripOnInput -> False], 
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"Expected an expression matching \
+\\!\\(\\*TagBox[RowBox[{\\\"f\\\", \\\"[\\\", RowBox[{\\\"___\\\", \\\",\\\", \
+\\\"3\\\"}], \\\"]\\\"}], Function[Short[Slot[1], 5]]]\\) in the \
+\\!\\(\\*TagBox[\\\"\\\\\\\"third\\\\\\\"\\\", Function[Short[Slot[1], \
+5]]]\\) argument of \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \
+\\\",\\\", \\\"2\\\", \\\",\\\", RowBox[{\\\"f\\\", \\\"[\\\", \
+RowBox[{\\\"___\\\", \\\",\\\", \\\"3\\\"}], \\\"]\\\"}]}], \\\"}\\\"}], \
+Function[Short[Slot[1], 5]]]\\), but found \\!\\(\\*TagBox[RowBox[{\\\"g\\\", \
+\\\"[\\\", RowBox[{\\\"6\\\", \\\",\\\", \\\"3\\\"}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) instead.\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"ArgumentMatchFailure\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Type\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox["\"Normal\"", HoldForm], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"HeadSubmatch\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   InterpretationBox[
+                    RowBox[{
+                    TagBox["Success", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["List", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["List", HoldForm], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["List", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["List", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1552", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[List], "HeldPattern" -> Hold[List], 
+                    "Bindings" -> <||>, "MatchedQ" -> True, "BaseMatchedQ" -> 
+                    True|>], SelectWithContents -> True, Selectable -> False],
+                     "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox["\"Match\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Success[
+                    "Match", <|
+                    "Pattern" -> HoldForm[List], "Expression" -> 
+                    HoldForm[List], "Bindings" -> <||>, "MatchBranch" -> 
+                    IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[List], "HeldPattern" -> Hold[List], 
+                    "Bindings" -> <||>, "MatchedQ" -> True, "BaseMatchedQ" -> 
+                    True|>], Automatic, Method -> Automatic]|>], Editable -> 
+                    False, SelectWithContents -> True, Selectable -> False], 
+                   HoldForm], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  
+                  TemplateBox[{"\"ArgumentSubmatches\"", "\": \""}, 
+                   "RowDefault"], "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   RowBox[{"{", 
+                    RowBox[{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Success", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["1", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["1", HoldForm], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["1", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["1", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1584", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[1], "HeldPattern" -> Hold[1], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+                    SelectWithContents -> True, Selectable -> False], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox["\"Match\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Success[
+                    "Match", <|
+                    "Pattern" -> HoldForm[1], "Expression" -> HoldForm[1], 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[1], "HeldPattern" -> Hold[1], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, 
+                    Method -> Automatic]|>], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False], ",", 
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Success", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["2", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["2", HoldForm], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["2", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["2", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1584", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[2], "HeldPattern" -> Hold[2], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+                    SelectWithContents -> True, Selectable -> False], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox["\"Match\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Success[
+                    "Match", <|
+                    "Pattern" -> HoldForm[2], "Expression" -> HoldForm[2], 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[2], "HeldPattern" -> Hold[2], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, 
+                    Method -> Automatic]|>], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False], ",", 
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Failure", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"], 
+                    ImageSizeCache -> {8.777109375, {0., 8.777109375}}], 
+                    Appearance -> None, BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox[
+                    "\"\[WarningSign]\"", "Message", StripOnInput -> False, 
+                    FontSize -> 35], ContentPadding -> False, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, FrameStyle -> None, 
+                    StripOnInput -> False], 
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Expected head matching \
+\\!\\(\\*TagBox[\\\"\\\\\\\"HeldPattern\\\\\\\"\\\", Function[Short[Slot[1], \
+5]]]\\), but found \\!\\(\\*TagBox[\\\"\\\\\\\"HeldExpression\\\\\\\"\\\", \
+Function[Short[Slot[1], 5]]]\\) instead.\"", "SummaryItem"]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"HeadMatchFailure\"", "SummaryItem"]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, AutoDelete -> False, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"], 
+                    ImageSizeCache -> {8.777109375, {0., 8.777109375}}], 
+                    Appearance -> None, BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    FrameBox[
+                    StyleBox[
+                    "\"\[WarningSign]\"", "Message", StripOnInput -> False, 
+                    FontSize -> 35], ContentPadding -> False, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, FrameStyle -> None, 
+                    StripOnInput -> False], 
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Expected head matching \
+\\!\\(\\*TagBox[\\\"\\\\\\\"HeldPattern\\\\\\\"\\\", Function[Short[Slot[1], \
+5]]]\\), but found \\!\\(\\*TagBox[\\\"\\\\\\\"HeldExpression\\\\\\\"\\\", \
+Function[Short[Slot[1], 5]]]\\) instead.\"", "SummaryItem"]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"HeadMatchFailure\"", "SummaryItem"]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Type\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["\"Normal\"", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"HeadSubmatch\"", "\": \""}, "RowDefault"],
+                     "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Failure", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{Typeset`open$$ = False, 
+                    Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], ButtonFunction :> (
+                    Typeset`open$$ = True), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Expected expression matching \
+\\!\\(\\*TagBox[\\\"f\\\", Function[Short[Slot[1], 5]]]\\), but found \
+\\!\\(\\*TagBox[\\\"g\\\", Function[Short[Slot[1], 5]]]\\) instead.\"", 
+                    "SummaryItem"]}}, GridBoxItemSize -> {"Columns" -> {
+                    6.5, All, Automatic}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}}, GridBoxSpacings -> {
+                    "Columns" -> {{0}}}], "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"AtomicMatchFailure\"", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], ButtonFunction :> (
+                    Typeset`open$$ = False), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Expected expression matching \
+\\!\\(\\*TagBox[\\\"f\\\", Function[Short[Slot[1], 5]]]\\), but found \
+\\!\\(\\*TagBox[\\\"g\\\", Function[Short[Slot[1], 5]]]\\) instead.\"", 
+                    "SummaryItem"]}}, GridBoxItemSize -> {"Columns" -> {
+                    6.5, All, Automatic}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}}, GridBoxSpacings -> {
+                    "Columns" -> {{0}}}], "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"AtomicMatchFailure\"", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All, Automatic}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Type\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["\"Atomic\"", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1552", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], SelectWithContents -> 
+                    True, Selectable -> False], HoldForm], "SummaryItem"]}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Failure[
+                    "AtomicMatchFailure", <|"MessageTemplate" -> 
+                    "Expected expression matching `2`, but found `1` \
+instead.", "MessageParameters" -> {
+                    HoldForm[$CellContext`g], 
+                    HoldForm[$CellContext`f]}, "Type" -> "Atomic", 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], Automatic, Method -> 
+                    Automatic]|>], Editable -> False, SelectWithContents -> 
+                    True, Selectable -> False], HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    
+                    TemplateBox[{"\"ArgumentSubmatches\"", "\": \""}, 
+                    "RowDefault"], "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    RowBox[{"{", 
+                    RowBox[{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Success", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{Typeset`open$$ = False, 
+                    Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], ButtonFunction :> (
+                    Typeset`open$$ = True), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["___", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["6", HoldForm], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], ButtonFunction :> (
+                    Typeset`open$$ = False), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["___", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["6", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource["FEBitmaps", 
+                    "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1608", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], SelectWithContents -> 
+                    True, Selectable -> False], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox["\"Match\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Success["Match", <|"Pattern" -> HoldForm[
+                    BlankNullSequence[]], "Expression" -> HoldForm[6], 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+                    Automatic]|>], Editable -> False, SelectWithContents -> 
+                    True, Selectable -> False], ",", 
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Success", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{Typeset`open$$ = False, 
+                    Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], ButtonFunction :> (
+                    Typeset`open$$ = True), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["3", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["3", HoldForm], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], ButtonFunction :> (
+                    Typeset`open$$ = False), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    FrameBox[
+                    StyleBox["\"\[Checkmark]\"", 
+                    Directive[
+                    RGBColor[
+                    0.3607843137254902, 0.596078431372549, 
+                    0.3803921568627451], 25], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Pattern\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["3", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Expression\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox["3", HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1584", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+                    SelectWithContents -> True, Selectable -> False], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox["\"Match\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Success[
+                    "Match", <|"Pattern" -> HoldForm[3], "Expression" -> 
+                    HoldForm[3], "Bindings" -> <||>, "MatchBranch" -> 
+                    IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, 
+                    Method -> Automatic]|>], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False]}], "}"}],
+                     HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                    HoldForm], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox[
+                    TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["7568", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Normal", "Arguments" -> <|
+                    "HeadSubmatch" -> 
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], "ArgumentSubmatches" -> {
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>]}, 
+                    "BindingConflicts" -> <||>|>, "HeldExpression" -> Hold[
+                    $CellContext`g[6, 3]], "HeldPattern" -> Hold[
+                    $CellContext`f[
+                    BlankNullSequence[], 3]], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> True|>], SelectWithContents -> 
+                    True, Selectable -> False], HoldForm], "SummaryItem"]}]}},
+                     AutoDelete -> False, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Failure[
+                    "HeadMatchFailure", <|
+                    "MessageTemplate" -> 
+                    "Expected head matching `1`, but found `2` instead.", 
+                    "MessageParameters" -> {
+                    HoldForm["HeldPattern"], 
+                    HoldForm["HeldExpression"]}, "Type" -> "Normal", 
+                    "HeadSubmatch" -> 
+                    Failure[
+                    "AtomicMatchFailure", <|
+                    "MessageTemplate" -> 
+                    "Expected expression matching `2`, but found `1` \
+instead.", "MessageParameters" -> {
+                    HoldForm[$CellContext`g], 
+                    HoldForm[$CellContext`f]}, "Type" -> "Atomic", 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], Automatic, Method -> 
+                    Automatic]|>], "ArgumentSubmatches" -> {
+                    Success["Match", <|"Pattern" -> HoldForm[
+                    BlankNullSequence[]], "Expression" -> HoldForm[6], 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+                    Automatic]|>], 
+                    Success[
+                    "Match", <|
+                    "Pattern" -> HoldForm[3], "Expression" -> HoldForm[3], 
+                    "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, 
+                    Method -> Automatic]|>]}, "Bindings" -> <||>, 
+                    "MatchBranch" -> IconizedObject[
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Normal", 
+                    "Arguments" -> <|
+                    "HeadSubmatch" -> 
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], "ArgumentSubmatches" -> {
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>]}, 
+                    "BindingConflicts" -> <||>|>, "HeldExpression" -> Hold[
+                    $CellContext`g[6, 3]], "HeldPattern" -> Hold[
+                    $CellContext`f[
+                    BlankNullSequence[], 3]], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+                    Automatic]|>], Editable -> False, SelectWithContents -> 
+                    True, Selectable -> False]}], "}"}], HoldForm], 
+                  "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Bindings\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}], 
+                   HoldForm], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"MatchBranch\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   InterpretationBox[
+                    DynamicModuleBox[{Typeset`open = False}, 
+                    TemplateBox[{"Expression", 
+                    RowBox[{"MatchBranchObject", "[", 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "IconizeEllipsis"]], "]"}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["15600", "IconizedItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    Dynamic[Typeset`open]}, "IconizedObject"]], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Normal", 
+                    "Arguments" -> <|
+                    "HeadSubmatch" -> 
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[List], "HeldPattern" -> Hold[List], 
+                    "Bindings" -> <||>, "MatchedQ" -> True, "BaseMatchedQ" -> 
+                    True|>], "ArgumentSubmatches" -> {
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[1], "HeldPattern" -> Hold[1], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[2], "HeldPattern" -> Hold[2], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Normal", 
+                    "Arguments" -> <|
+                    "HeadSubmatch" -> 
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[$CellContext`g], "HeldPattern" -> 
+                    Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> False|>], "ArgumentSubmatches" -> {
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], 
+                    
+                    ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                    "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>]}, 
+                    "BindingConflicts" -> <||>|>, "HeldExpression" -> Hold[
+                    $CellContext`g[6, 3]], "HeldPattern" -> Hold[
+                    $CellContext`f[
+                    BlankNullSequence[], 3]], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> True|>]}, 
+                    "BindingConflicts" -> <||>|>, "HeldExpression" -> 
+                    Hold[{1, 2, 
+                    $CellContext`g[6, 3]}], "HeldPattern" -> Hold[{1, 2, 
+                    $CellContext`f[
+                    BlankNullSequence[], 3]}], "Bindings" -> <||>, "MatchedQ" -> 
+                    False, "BaseMatchedQ" -> True|>], SelectWithContents -> 
+                    True, Selectable -> False], HoldForm], "SummaryItem"]}]}},
+              AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Failure[
+  "ArgumentMatchFailure", <|
+   "MessageTemplate" -> 
+    "Expected an expression matching `1` in the `2` argument of `3`, but \
+found `4` instead.", "MessageParameters" -> {
+      HoldForm[
+       $CellContext`f[
+        BlankNullSequence[], 3]], "third", 
+      HoldForm[{1, 2, 
+        $CellContext`f[
+         BlankNullSequence[], 3]}], 
+      HoldForm[
+       $CellContext`g[6, 3]]}, "Type" -> "Normal", "HeadSubmatch" -> 
+    Success["Match", <|
+      "Pattern" -> HoldForm[List], "Expression" -> HoldForm[List], 
+       "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+         ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+          "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+           Hold[List], "HeldPattern" -> Hold[List], "Bindings" -> <||>, 
+           "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+         Automatic]|>], "ArgumentSubmatches" -> {
+      Success[
+      "Match", <|
+       "Pattern" -> HoldForm[1], "Expression" -> HoldForm[1], 
+        "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+          
+          ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+           "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+            Hold[1], "HeldPattern" -> Hold[1], "Bindings" -> <||>, "MatchedQ" -> 
+            True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+          Automatic]|>], 
+      Success[
+      "Match", <|
+       "Pattern" -> HoldForm[2], "Expression" -> HoldForm[2], 
+        "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+          
+          ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+           "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+            Hold[2], "HeldPattern" -> Hold[2], "Bindings" -> <||>, "MatchedQ" -> 
+            True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+          Automatic]|>], 
+      Failure[
+      "HeadMatchFailure", <|
+       "MessageTemplate" -> 
+        "Expected head matching `1`, but found `2` instead.", 
+        "MessageParameters" -> {
+          HoldForm["HeldPattern"], 
+          HoldForm["HeldExpression"]}, "Type" -> "Normal", "HeadSubmatch" -> 
+        Failure["AtomicMatchFailure", <|
+          "MessageTemplate" -> 
+           "Expected expression matching `2`, but found `1` instead.", 
+           "MessageParameters" -> {
+             HoldForm[$CellContext`g], 
+             HoldForm[$CellContext`f]}, "Type" -> "Atomic", 
+           "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+             
+             ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+              "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+               Hold[$CellContext`g], "HeldPattern" -> Hold[$CellContext`f], 
+               "Bindings" -> <||>, "MatchedQ" -> False, "BaseMatchedQ" -> 
+               False|>], Automatic, Method -> Automatic]|>], 
+        "ArgumentSubmatches" -> {
+          Success["Match", <|"Pattern" -> HoldForm[
+              BlankNullSequence[]], "Expression" -> HoldForm[6], 
+            "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+              
+              ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+               "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                Hold[6], "HeldPattern" -> Hold[
+                  BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                True, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+              Automatic]|>], 
+          Success[
+          "Match", <|
+           "Pattern" -> HoldForm[3], "Expression" -> HoldForm[3], 
+            "Bindings" -> <||>, "MatchBranch" -> IconizedObject[
+              
+              ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+               "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                "MatchedQ" -> True, "BaseMatchedQ" -> True|>], Automatic, 
+              Method -> Automatic]|>]}, "Bindings" -> <||>, "MatchBranch" -> 
+        IconizedObject[
+          
+          ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+           "Type" -> "Normal", 
+            "Arguments" -> <|
+             "HeadSubmatch" -> 
+              ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                 Hold[$CellContext`g], "HeldPattern" -> Hold[$CellContext`f], 
+                 "Bindings" -> <||>, "MatchedQ" -> False, "BaseMatchedQ" -> 
+                 False|>], "ArgumentSubmatches" -> {
+                
+                ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                 "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                  Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                  True, "BaseMatchedQ" -> True|>], 
+                
+                ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                 "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                  Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                  "MatchedQ" -> True, "BaseMatchedQ" -> True|>]}, 
+              "BindingConflicts" -> <||>|>, "HeldExpression" -> Hold[
+              $CellContext`g[6, 3]], "HeldPattern" -> Hold[
+              $CellContext`f[
+               BlankNullSequence[], 3]], "Bindings" -> <||>, "MatchedQ" -> 
+            False, "BaseMatchedQ" -> True|>], Automatic, Method -> 
+          Automatic]|>]}, "Bindings" -> <||>, "MatchBranch" -> 
+    IconizedObject[
+      ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+       "Type" -> "Normal", 
+        "Arguments" -> <|
+         "HeadSubmatch" -> 
+          ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+            "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+             Hold[List], "HeldPattern" -> Hold[List], "Bindings" -> <||>, 
+             "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+          "ArgumentSubmatches" -> {
+            
+            ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+             "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+              Hold[1], "HeldPattern" -> Hold[1], "Bindings" -> <||>, 
+              "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+            
+            ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+             "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+              Hold[2], "HeldPattern" -> Hold[2], "Bindings" -> <||>, 
+              "MatchedQ" -> True, "BaseMatchedQ" -> True|>], 
+            
+            ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+             "Type" -> "Normal", 
+              "Arguments" -> <|
+               "HeadSubmatch" -> 
+                ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                  "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                   Hold[$CellContext`g], "HeldPattern" -> 
+                   Hold[$CellContext`f], "Bindings" -> <||>, "MatchedQ" -> 
+                   False, "BaseMatchedQ" -> False|>], "ArgumentSubmatches" -> {
+                  
+                  ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                   "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[6], "HeldPattern" -> Hold[
+                    BlankNullSequence[]], "Bindings" -> <||>, "MatchedQ" -> 
+                    True, "BaseMatchedQ" -> True|>], 
+                  
+                  ChristopherWolfram`PatternErrors`MatchBranchObject[<|
+                   "Type" -> "Atomic", "Arguments" -> <||>, "HeldExpression" -> 
+                    Hold[3], "HeldPattern" -> Hold[3], "Bindings" -> <||>, 
+                    "MatchedQ" -> True, "BaseMatchedQ" -> True|>]}, 
+                "BindingConflicts" -> <||>|>, "HeldExpression" -> Hold[
+                $CellContext`g[6, 3]], "HeldPattern" -> Hold[
+                $CellContext`f[
+                 BlankNullSequence[], 3]], "Bindings" -> <||>, "MatchedQ" -> 
+              False, "BaseMatchedQ" -> True|>]}, "BindingConflicts" -> <||>|>,
+         "HeldExpression" -> Hold[{1, 2, 
+           $CellContext`g[6, 3]}], "HeldPattern" -> Hold[{1, 2, 
+           $CellContext`f[
+            BlankNullSequence[], 3]}], "Bindings" -> <||>, "MatchedQ" -> 
+        False, "BaseMatchedQ" -> True|>], Automatic, Method -> Automatic]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.883735089903242*^9},
+ CellLabel->"Out[26]=",
+ CellID->1765534850,ExpressionUUID->"411bdfdb-4964-49c2-9f07-b2457b0912b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatchInformation", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"6", ",", "5", ",", "4"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"g", "[", 
+      RowBox[{"6", ",", "4"}], "]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.883735178096796*^9, 3.883735181459597*^9}},
+ CellLabel->"In[33]:=",
+ CellID->2086705152,ExpressionUUID->"001c683f-d38b-46d5-9a19-270be479ff71"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TemplateBox[{"\"MatchInformationObject[\"", 
+    RowBox[{"MenuView", "[", 
+      RowBox[{"{", "}"}], "]"}], "\"]\""},
+   "RowDefault"],
+  ChristopherWolfram`PatternErrors`MatchInformationObject[{}]]], "Output",
+ CellChangeTimes->{3.883735192945265*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"34a51974-cfa5-4a20-9218-0e9bd422709b"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MatchInformation", "[", 
+   RowBox[{
+    RowBox[{"Image", "[", 
+     RowBox[{"Range", "[", "100000", "]"}], "]"}], ",", 
+    RowBox[{"_", "?", "ImageQ"}]}], "]"}], "[", "\"\<Failure\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.883736198419866*^9, 3.883736223158969*^9}},
+ CellLabel->"In[48]:=",
+ CellID->1487083289,ExpressionUUID->"718c37f7-0419-4f84-8f74-bd35b2b28432"]
+},
+WindowSize->{1059.375, 852.},
+WindowMargins->{{Automatic, -175.875}, {65.25, Automatic}},
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"47d475ad-6646-4ac8-ab15-bb83c0d49baf"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 548, 15, 29, "Input",ExpressionUUID->"b1d8aff3-11fb-45c0-8a52-7affa9826f42",
+ CellID->1151791968],
+Cell[1131, 39, 87018, 1614, 244, "Output",ExpressionUUID->"411bdfdb-4964-49c2-9f07-b2457b0912b9",
+ CellID->1765534850]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88186, 1658, 502, 13, 29, "Input",ExpressionUUID->"001c683f-d38b-46d5-9a19-270be479ff71",
+ CellID->2086705152],
+Cell[88691, 1673, 367, 8, 33, "Output",ExpressionUUID->"34a51974-cfa5-4a20-9218-0e9bd422709b"]
+}, Open  ]],
+Cell[89073, 1684, 408, 10, 29, "Input",ExpressionUUID->"718c37f7-0419-4f84-8f74-bd35b2b28432",
+ CellID->1487083289]
+}
+]
+*)
+
+(* End of internal cache information *)
+

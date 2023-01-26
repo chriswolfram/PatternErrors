@@ -12,7 +12,8 @@ Needs["ChristopherWolfram`PatternErrors`"]
 
 SetFallthrough[f_] :=
 	(
-		expr:HoldPattern[f][___] := ignoredValue@HeldMatchInformation[Hold[expr], downValuesPattern[f]]
+		expr:HoldPattern[f][___] :=
+			ignoredValue[HeldMatchInformation[Hold[expr], Hold[Evaluate[downValuesPattern[f]]]]["Failure"]]
 	)
 
 downValuesPattern[f_] :=
