@@ -20,7 +20,7 @@ Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchStyledPattern`"]
 	Type: The type of pattern that the top-level of this branch represents.
 	Arguments: Type-specific arguments.
 	HeldExpression: A held (with Hold) version of the matched expression.
-	Pattern: The pattern being matched.
+	HeldPattern: A held (with Hold) version of the pattern being matched.
 	Bindings: Pattern variable bindings used at this part of the match
 	MatchedQ: Whether this branch represents a successful match or not.
 	BaseMatchedQ: False when this branch represents the root cause of a failed match.
@@ -57,6 +57,7 @@ Needs["ChristopherWolfram`PatternErrors`MatchBranchObject`BranchStyledPattern`"]
 	"Alternatives"
 	<|
 		"Submatch" -> _MatchBranchObject,
+		"HeldBranchPatterns" -> {___},
 		"BranchIndex" -> _Integer
 	|>
 
@@ -73,8 +74,8 @@ branchTypePattern = "Atomic" | "Pattern" | "PatternTest" | "Condition" | "Altern
 branchDataPattern = KeyValuePattern[{
 	"Type" -> type:branchTypePattern,
 	"Arguments" -> args_?AssociationQ,
-	"HeldExpression" -> heldExpr_,
-	"Pattern" -> patt_,
+	"HeldExpression" -> heldExpr_Hold,
+	"HeldPattern" -> heldPatt_Hold,
 	"Bindings" -> bindings_?AssociationQ,
 	"MatchedQ" -> matchedQ_?BooleanQ,
 	"BaseMatchedQ" -> baseMatchedQ_?BooleanQ
